@@ -1,0 +1,26 @@
+#!/bin/bash
+dd if=/dev/zero of=mydisk bs=1024 count=1440
+mkfs -b 1024 mydisk 1440  # enter y to let mkfs to proceed
+mount -o loop mydisk /mnt
+mkdir /mnt/test1
+
+mkdir $(printf "/mnt/test1/longfuckingdirectorynames%02i " $(seq 1 150))
+
+
+touch /mnt/test2
+
+echo "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque risus at ipsum sagittis congue. Duis vehicula enim id blandit auctor. Nulla facilisi. Aliquam eget odio vitae augue aliquam laoreet nec ac mauris. Nunc at massa in ipsum elementum dapibus quis in quam. Morbi imperdiet semper ligula at viverra. Mauris rutrum ut leo eu rhoncus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec fermentum in orci at aliquam. Donec efficitur neque metus, sed malesuada nunc auctor at. Aenean velit risus, aliquet et libero feugiat, semper blandit orci.
+
+Nam vehicula est pulvinar luctus egestas. Aenean congue semper ante. Nullam lectus lorem, fermentum id leo et, tincidunt mattis nulla. Mauris maximus cursus risus eu vulputate. Fusce urna augue, tincidunt in sodales non, pretium accumsan lacus. Mauris eu volutpat felis, ac consequat leo. Suspendisse semper augue sed libero consectetur euismod.
+
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla justo tellus, vehicula nec porta ac, imperdiet quis magna. Sed tempor libero neque, nec eleifend mi faucibus eu. Sed at accumsan mauris. Nullam molestie nisl vel ultricies venenatis. Phasellus ullamcorper pharetra hendrerit. Etiam gravida est eu tellus suscipit aliquam. Pellentesque bibendum efficitur semper. Suspendisse nec neque tristique, fringilla felis euismod, ullamcorper lacus. Etiam a fringilla nisi. Etiam sed augue quis tortor pretium commodo id condimentum metus.
+
+Quisque eget cursus arcu. Vivamus tellus lorem, scelerisque sit amet lorem tempus, finibus aliquam tellus. Quisque varius nec sapien ac suscipit. Vivamus vestibulum est eget interdum interdum. Nulla vestibulum porttitor blandit. Nulla vestibulum dignissim nisi, in placerat sapien tempor ac. Nullam nibh mauris, condimentum ac arcu vitae, tempor feugiat mi. Quisque at tincidunt odio. Mauris aliquet odio sed malesuada sodales. Ut elementum nibh eu fermentum hendrerit. Duis suscipit finibus purus, egestas laoreet eros luctus eu. Sed id rhoncus diam. Integer venenatis enim ac quam varius, convallis commodo est eleifend. Nulla hendrerit finibus nulla et convallis.
+
+Integer a nunc id mi volutpat auctor quis eu neque. Etiam sed magna egestas, dapibus nulla vitae, pulvinar diam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum quis luctus urna. Sed a nunc ultrices, tempor neque nec, mollis mauris. Sed vulputate aliquam sem molestie sodales. Suspendisse dapibus pulvinar massa a interdum. Mauris quis ex at magna laoreet hendrerit at vel arcu. Duis interdum turpis ut egestas varius. Integer nec nunc lorem. Donec ut nibh bibendum, molestie elit non, venenatis turpis. Nulla facilisi. Pellentesque volutpat massa eget augue feugiat dapibus. Phasellus luctus mollis odio, nec vehicula sapien elementum eu. Mauris eu mi libero. Pellentesque urna urna, placerat in eleifend ac, finibus sed ante.
+
+Vestibulum id sollicitudin mi. Aenean consequat diam ut diam interdum, at porta justo porttitor. Duis efficitur odio vitae tortor porta laoreet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla faucibus venenatis rutrum. Nullam tincidunt enim maximus ultricies sollicitudin. Cras sit amet posuere eros. Maecenas lobortis ut purus ut volutpat.
+
+Praesent facilisis consequat purus, sagittis tempus velit tincidunt vitae. Maecenas bibendum libero urna, in pellentesque dolor venenatis eu. Fusce congue ex in tincidunt ornare. Nulla vitae magna in odio ultrices fermentum. Quisque id neque pharetra odio pretium tempor. Mauris tempor sem in tempor placerat. Mauris eget ligula ac augue venenatis facilisis. Integer ut ipsum vel justo pretium dictum. Nulla metus libero, tempus maximus lectus in, hendrerit sodales elit. Aliquam tincidunt neque eget ultricies efficitur. Morbi nec arcu arcu. Sed iaculis neque at augue cursus venenatis. Nulla at leo libero. Aliquam quam enim, finibus nec libero eget, consectetur luctus turpis. Suspendisse feugiat ligula vel tellus dapibus, sit amet mollis dolor ultrices." > /mnt/test2
+
+umount /mnt

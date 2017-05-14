@@ -1,0 +1,5 @@
+rm mydisk
+rm proj
+./mkscript
+gcc -w -m32 main.c -o proj
+./proj
